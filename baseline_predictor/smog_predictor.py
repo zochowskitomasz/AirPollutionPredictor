@@ -3,10 +3,8 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import RandomizedSearchCV
 from sklearn.model_selection import GridSearchCV
-from sklearn.pipeline import Pipeline
-from xgboost import XGBRegressor
+
 
 def read_weather_data(path):
     df = pd.read_csv(path, sep=',')
