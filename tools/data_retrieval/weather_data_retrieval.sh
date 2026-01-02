@@ -16,27 +16,6 @@ start_date=$1
 end_date=$2
 out_file=$3
 
-action=""
-if [ -e $out_file ]; then
-    while true; do
-        echo "[$(date -Iseconds)] tools/data_retrieval/weather_data_retrieval.sh WARN: File $out_file already exists" >> $log_file
-        read -p "File $out_file already exists. What do you want to do? [(O)verwrite/(A)ppend/(Q)uit] " action
-        case $action in
-            [Oo])
-                echo "[$(date -Iseconds)] tools/data_retrieval/weather_data_retrieval.sh INFO: Overwriting $out_file..." >> $log_file
-                break;;
-            [Aa])
-                echo "[$(date -Iseconds)] tools/data_retrieval/weather_data_retrieval.sh INFO: Appending $out_file..." >> $log_file
-                break;;
-            [Qq])
-               echo "[$(date -Iseconds)] tools/data_retrieval/weather_data_retrieval.sh INFO: Script terminated" >> $log_file
-                exit 0;;
-            *)
-                echo "Unrecognized input";;
-        esac
-    done
-fi
-
 response=$(curl -s "https://archive-api.open-meteo.com/v1/archive?latitude=52.2298&longitude=21.0118&start_date=$start_date&end_date=$end_date&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,wind_speed_10m,wind_speed_100m,surface_pressure,cloud_cover,rain,snowfall&timezone=auto")
 
 if [ ! -z "$(echo $response | jq ".error // empty")" ]; then
@@ -63,11 +42,7 @@ fi
     exit 1
 }
 
-columns=$(echo $response | jq -r ".hourly | keys[]")
-function join_by { local IFS="$1"; shift; echo "$*"; }
-if [[ $action =~ [Oo] ]]; then
-    echo $(join_by , $columns) > $out_file
-fi
+echo "time,temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,wind_speed_10m,wind_speed_100m,surface_pressure,cloud_cover,rain,snowfall" > $out_file
 
 paste -d "," <(echo "$resp_time") <(echo "$resp_temperature") <(echo "$resp_humidity") <(echo "$resp_dew_point") <(echo "$resp_app_temp") <(echo "$resp_wind_10") <(echo "$resp_wind_100") <(echo "$resp_pressure") <(echo "$resp_cloud") <(echo "$resp_rain") <(echo "$resp_snow") >> $out_file
 
