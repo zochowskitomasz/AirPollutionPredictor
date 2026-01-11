@@ -46,5 +46,7 @@ echo "time,temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature
 
 paste -d "," <(echo "$resp_time") <(echo "$resp_temperature") <(echo "$resp_humidity") <(echo "$resp_dew_point") <(echo "$resp_app_temp") <(echo "$resp_wind_10") <(echo "$resp_wind_100") <(echo "$resp_pressure") <(echo "$resp_cloud") <(echo "$resp_rain") <(echo "$resp_snow") >> $out_file
 
-echo echo "[$(date -Iseconds)] tools/data_retrieval/weather_data_retrieval.sh INFO: script finished" >> $log_file
+chmod 666 $out_file
+
+echo "[$(date -Iseconds)] tools/data_retrieval/weather_data_retrieval.sh INFO: script finished" >> $log_file
 exit 0
