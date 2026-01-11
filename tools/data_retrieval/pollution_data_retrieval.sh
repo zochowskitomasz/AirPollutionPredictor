@@ -20,7 +20,7 @@ sensor_ids=(3575 3576 3579 3580 3581 3584 3585)
 sensor_names=("c6h6" "co" "no" "no2" "nox" "pm10" "pm25")
 
 for i in ${!sensor_ids[@]}; do
-    response=$(curl -s "https://api.gios.gov.pl/pjp-api/v1/rest/archivalData/getDataBySensor/${sensor_ids[$i]}?dateFrom=$start_date%2000%3A00&dateTo=$end_date%2000%3A00&size=500")
+    response=$(curl -s "https://api.gios.gov.pl/pjp-api/v1/rest/archivalData/getDataBySensor/${sensor_ids[$i]}?dateFrom=$start_date%2000%3A00&dateTo=$end_date%2023%3A00&size=500")
 
     if [ ! -z "$(echo $response | jq ".error_result // empty")" ]; then
         echo "[$(date -Iseconds)] tools/data_retrieval/pollution_data_retrieval.sh ERROR: Data could not be retrieved from GIOŚ PJP API. Error message: $(echo $response | jq ".error_reason")" >> $log_file
@@ -56,6 +56,8 @@ echo -n "time," > $out_file
 echo $(join_by , ${sensor_names[@]}) >> $out_file
 
 paste -d "," <(echo "$dates_nospace") <(echo "$c6h6_values") <(echo "$co_values") <(echo "$no_values") <(echo "$no2_values") <(echo "$nox_values") <(echo "$pm10_values") <(echo "$pm25_values") >> $out_file
+
+chmod 666 $out_file
 
 echo echo "[$(date -Iseconds)] tools/data_retrieval/pollution_data_retrieval.sh INFO: script finished" >> $log_file
 exit 0
