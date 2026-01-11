@@ -19,7 +19,7 @@ def database_connection():
 
 def read_weather_data(path):
     df = pd.read_csv(path, sep=',')
-    df.columns=['time', 'temp', 'hum', 'press', 'wind']
+    df.columns=['time', 'temperature_2m', 'relative_humidity_2m', 'surface_pressure', 'wind_speed_10m']
     df['time'] = pd.to_datetime(df['time'], errors='coerce')
     df['month'] = df['time'].dt.month
     df.dropna(inplace=True)
@@ -36,15 +36,15 @@ def read_smog_data(path):
 def read_weather_data_from_db(connection):
     cursor = connection.cursor()
     query = """
-    SELECT time, temp, hum, press, wind 
+    SELECT time, temperature_2m::float as temperature_2m, relative_humidity_2m, surface_pressure, wind_speed_10m::float as wind_speed_10m 
     FROM weather
     ORDER BY time
     """
     cursor.execute(query)
     rows = cursor.fetchall()
     cursor.close()
-    
-    df = pd.DataFrame(rows, columns=['time', 'temp', 'hum', 'press', 'wind'])
+   
+    df = pd.DataFrame(rows, columns=['time', 'temperature_2m', 'relative_humidity_2m', 'surface_pressure', 'wind_speed_10m'])
     df['time'] = pd.to_datetime(df['time'], errors='coerce')
     df['month'] = df['time'].dt.month
     df.dropna(inplace=True)
@@ -53,7 +53,7 @@ def read_weather_data_from_db(connection):
 def read_smog_data_from_db(connection):
     cursor = connection.cursor()
     query = """
-    SELECT time, pm25 
+    SELECT time, pm25::float as pm25 
     FROM pollution
     ORDER BY time
     """
@@ -70,7 +70,7 @@ def prepare_data(connection):
     weather = read_weather_data_from_db(connection)
     pm25 = read_smog_data_from_db(connection)
     df = pd.merge(weather, pm25, on='time', how='inner')
-    X = df[['temp', 'press', 'hum', 'wind', 'month']]
+    X = df[['temperature_2m', 'surface_pressure', 'relative_humidity_2m', 'wind_speed_10m', 'month']]
     y = df['pm25']
     X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42)
@@ -80,7 +80,7 @@ def prepare_data_from_csv(weather_path, smog_path):
     weather = read_weather_data(weather_path)
     pm25 = read_smog_data(smog_path)
     df = pd.merge(weather, pm25, on='time', how='inner')
-    X = df[['temp', 'press', 'hum', 'wind', 'month']]
+    X = df[['temperature_2m', 'surface_pressure', 'relative_humidity_2m', 'wind_speed_10m', 'month']]
     y = df['pm25']
     X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42)
