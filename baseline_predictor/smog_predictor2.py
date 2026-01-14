@@ -139,6 +139,7 @@ def evaluate_model(fitted_model, X_test, y_test):
 def print_results(results, model_name):
     print(f"\n{'='*60}")
     print(f"Results for {model_name} model:")
+    print(f"Evaluated on: {pd.Timestamp.now()}")
     print(f"{'='*60}")
     
     print("\nModel Statistics:")
