@@ -85,7 +85,7 @@ def train_model(model, param_grid, X_train, y_train):
     grid = GridSearchCV(
         estimator=model,
         param_grid=param_grid,
-        scoring='neg_mean_absolute_error',
+        scoring='neg_mean_squared_error',
         cv=tscv,
         n_jobs=-1,
         verbose=1
@@ -147,7 +147,7 @@ def print_results(results, model_name):
     print(f"  RMSE (Root Mean Sq. Error): {results['RMSE']}")
     print(f"  MAE (Mean Absolute Error):  {results['MAE']}")
     print(f"  MSE (Mean Squared Error):   {results['MSE']}")
-    print(f"  MAPE (Mean Abs. % Error):   {results['MAPE']}%")
+    print(f"  MAPE (Mean Abs. % Error):   {results['MAPE']*100}%")
     print(f"  Median Absolute Error:      {results['Median_AE']}")
     
     print("\nResiduals Analysis:")
@@ -190,8 +190,8 @@ def main():
         RF = RandomForestRegressor()
 
         RF_param_grid = {
-        'n_estimators': [100, 200, 300],
-        'max_depth': [None, 10, 20, 30]
+        'n_estimators': [100, 200, 300, 400, 500],
+        'max_depth': [None, 10, 20]
         }
 
         RF_model, best_params = train_model(RF, RF_param_grid, X_train, y_train)
