@@ -1,0 +1,81 @@
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 33 length of test set: 15
+Training model...
+Fitting 5 folds for each of 12 candidates, totalling 60 fits
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+============================================================
+  R² Score:                 0.93
+  RMSE (Root Mean Sq. Error): 2.34
+  MAE (Mean Absolute Error):  1.72
+  MSE (Mean Squared Error):   5.47
+  MAPE (Mean Abs. % Error):   0.11%
+  Median Absolute Error:    1.17
+
+Residuals Analysis:
+  Residuals Mean:           0.73
+  Residuals Std Dev:        2.22
+
+Value Ranges:
+  Predicted Range:  [7.22, 33.22]
+  Actual Range:     [5.9, 39.3]
+============================================================
+
+Database connection closed.
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 50 length of test set: 22
+Training model...
+Fitting 5 folds for each of 12 candidates, totalling 60 fits
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+============================================================
+  R² Score:                 0.94
+  RMSE (Root Mean Sq. Error): 5.24
+  MAE (Mean Absolute Error):  3.64
+  MSE (Mean Squared Error):   27.45
+  MAPE (Mean Abs. % Error):   0.16%
+  Median Absolute Error:    1.94
+
+Residuals Analysis:
+  Residuals Mean:           -1.74
+  Residuals Std Dev:        4.94
+
+Value Ranges:
+  Predicted Range:  [7.15, 75.88]
+  Actual Range:     [5.9, 82.1]
+============================================================
+
+Database connection closed.
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 17189 length of test set: 7367
+Training model...
+Fitting 5 folds for each of 12 candidates, totalling 60 fits
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+============================================================
+  R² Score:                 0.69
+  RMSE (Root Mean Sq. Error): 5.77
+  MAE (Mean Absolute Error):  3.87
+  MSE (Mean Squared Error):   33.32
+  MAPE (Mean Abs. % Error):   0.3%
+  Median Absolute Error:    2.55
+
+Residuals Analysis:
+  Residuals Mean:           0.02
+  Residuals Std Dev:        5.77
+
+Value Ranges:
+  Predicted Range:  [4.42, 93.77]
+  Actual Range:     [2.6, 107.5]
+============================================================
+
+Database connection closed.

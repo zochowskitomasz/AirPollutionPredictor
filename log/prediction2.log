@@ -1,0 +1,286 @@
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 17189, length of test set: 7367
+Training model...
+Fitting 5 folds for each of 12 candidates, totalling 60 fits
+Best parameters found for Random Forest Regressor: {'max_depth': 10, 'n_estimators': 200}
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+Evaluated on: 2026-01-14 15:01:42.640945
+============================================================
+
+Model Statistics:
+  R² Score:                   0.29
+  RMSE (Root Mean Sq. Error): 10.08
+  MAE (Mean Absolute Error):  6.56
+  MSE (Mean Squared Error):   101.55
+  MAPE (Mean Abs. % Error):   0.55%
+  Median Absolute Error:      4.59
+
+Residuals Analysis:
+  Residuals Mean:           -1.33
+  Residuals Std Dev:        9.99
+
+Value Ranges:
+  Predicted Range:  [6.56, 62.97]
+  Actual Range:     [2.7, 107.5]
+============================================================
+
+
+============================================================
+Feature Importance:
+============================================================
+                Feature  Importance
+3        wind_speed_10m    0.229134
+0        temperature_2m    0.224638
+1      surface_pressure    0.173819
+5             month_cos    0.147193
+2  relative_humidity_2m    0.096739
+4             month_sin    0.065235
+6              hour_sin    0.039625
+7              hour_cos    0.023617
+============================================================
+
+Database connection closed.
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 17206, length of test set: 7374
+Training model...
+Fitting 5 folds for each of 15 candidates, totalling 75 fits
+/usr/lib/python3/dist-packages/joblib/externals/loky/process_executor.py:752: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+Best parameters found for Random Forest Regressor: {'max_depth': 10, 'n_estimators': 400}
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+Evaluated on: 2026-01-15 15:02:57.303368
+============================================================
+
+Model Statistics:
+  R² Score:                   0.28
+  RMSE (Root Mean Sq. Error): 10.25
+  MAE (Mean Absolute Error):  6.58
+  MSE (Mean Squared Error):   105.15
+  MAPE (Mean Abs. % Error):   55.00000000000001%
+  Median Absolute Error:      4.56
+
+Residuals Analysis:
+  Residuals Mean:           -1.25
+  Residuals Std Dev:        10.18
+
+Value Ranges:
+  Predicted Range:  [6.7, 63.75]
+  Actual Range:     [2.7, 111.7]
+============================================================
+
+
+============================================================
+Feature Importance:
+============================================================
+                Feature  Importance
+0        temperature_2m    0.247736
+3        wind_speed_10m    0.234761
+1      surface_pressure    0.178354
+5             month_cos    0.121095
+2  relative_humidity_2m    0.095776
+4             month_sin    0.060134
+6              hour_sin    0.037802
+7              hour_cos    0.024342
+============================================================
+
+Database connection closed.
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 17222, length of test set: 7382
+Training model...
+Fitting 5 folds for each of 15 candidates, totalling 75 fits
+/usr/lib/python3/dist-packages/joblib/externals/loky/process_executor.py:752: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+Best parameters found for Random Forest Regressor: {'max_depth': 10, 'n_estimators': 100}
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+Evaluated on: 2026-01-16 15:02:48.633437
+============================================================
+
+Model Statistics:
+  R² Score:                   0.27
+  RMSE (Root Mean Sq. Error): 10.27
+  MAE (Mean Absolute Error):  6.6
+  MSE (Mean Squared Error):   105.42
+  MAPE (Mean Abs. % Error):   55.00000000000001%
+  Median Absolute Error:      4.55
+
+Residuals Analysis:
+  Residuals Mean:           -1.28
+  Residuals Std Dev:        10.19
+
+Value Ranges:
+  Predicted Range:  [6.69, 65.88]
+  Actual Range:     [2.7, 111.7]
+============================================================
+
+
+============================================================
+Feature Importance:
+============================================================
+                Feature  Importance
+0        temperature_2m    0.258660
+3        wind_speed_10m    0.232669
+1      surface_pressure    0.179147
+5             month_cos    0.110236
+2  relative_humidity_2m    0.098513
+4             month_sin    0.058956
+6              hour_sin    0.037181
+7              hour_cos    0.024637
+============================================================
+
+Database connection closed.
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 17239, length of test set: 7389
+Training model...
+Fitting 5 folds for each of 15 candidates, totalling 75 fits
+/usr/lib/python3/dist-packages/joblib/externals/loky/process_executor.py:752: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+Best parameters found for Random Forest Regressor: {'max_depth': 10, 'n_estimators': 300}
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+Evaluated on: 2026-01-17 15:02:53.510003
+============================================================
+
+Model Statistics:
+  R² Score:                   0.26
+  RMSE (Root Mean Sq. Error): 10.3
+  MAE (Mean Absolute Error):  6.63
+  MSE (Mean Squared Error):   106.03
+  MAPE (Mean Abs. % Error):   55.00000000000001%
+  Median Absolute Error:      4.62
+
+Residuals Analysis:
+  Residuals Mean:           -1.34
+  Residuals Std Dev:        10.21
+
+Value Ranges:
+  Predicted Range:  [7.03, 63.46]
+  Actual Range:     [2.7, 111.7]
+============================================================
+
+
+============================================================
+Feature Importance:
+============================================================
+                Feature  Importance
+0        temperature_2m    0.253933
+3        wind_speed_10m    0.232011
+1      surface_pressure    0.179972
+5             month_cos    0.114481
+2  relative_humidity_2m    0.098612
+4             month_sin    0.058354
+6              hour_sin    0.038579
+7              hour_cos    0.024058
+============================================================
+
+Database connection closed.
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 17256, length of test set: 7396
+Training model...
+Fitting 5 folds for each of 15 candidates, totalling 75 fits
+/usr/lib/python3/dist-packages/joblib/externals/loky/process_executor.py:752: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+Best parameters found for Random Forest Regressor: {'max_depth': 10, 'n_estimators': 100}
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+Evaluated on: 2026-01-18 15:02:49.240290
+============================================================
+
+Model Statistics:
+  R² Score:                   0.24
+  RMSE (Root Mean Sq. Error): 10.41
+  MAE (Mean Absolute Error):  6.74
+  MSE (Mean Squared Error):   108.47
+  MAPE (Mean Abs. % Error):   56.99999999999999%
+  Median Absolute Error:      4.66
+
+Residuals Analysis:
+  Residuals Mean:           -1.46
+  Residuals Std Dev:        10.31
+
+Value Ranges:
+  Predicted Range:  [6.8, 60.05]
+  Actual Range:     [2.7, 111.7]
+============================================================
+
+
+============================================================
+Feature Importance:
+============================================================
+                Feature  Importance
+0        temperature_2m    0.253192
+3        wind_speed_10m    0.230762
+1      surface_pressure    0.180928
+5             month_cos    0.116730
+2  relative_humidity_2m    0.097683
+4             month_sin    0.057919
+6              hour_sin    0.039291
+7              hour_cos    0.023495
+============================================================
+
+Database connection closed.
+Connecting to PostgreSQL database...
+Preparing data from database...
+Data prepared, length of training set: 17273, length of test set: 7403
+Training model...
+Fitting 5 folds for each of 15 candidates, totalling 75 fits
+/usr/lib/python3/dist-packages/joblib/externals/loky/process_executor.py:752: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+Best parameters found for Random Forest Regressor: {'max_depth': 10, 'n_estimators': 500}
+Evaluating model...
+
+============================================================
+Results for Random Forest Regressor model:
+Evaluated on: 2026-01-19 15:03:01.970010
+============================================================
+
+Model Statistics:
+  R² Score:                   0.24
+  RMSE (Root Mean Sq. Error): 10.41
+  MAE (Mean Absolute Error):  6.73
+  MSE (Mean Squared Error):   108.27
+  MAPE (Mean Abs. % Error):   56.00000000000001%
+  Median Absolute Error:      4.65
+
+Residuals Analysis:
+  Residuals Mean:           -1.48
+  Residuals Std Dev:        10.3
+
+Value Ranges:
+  Predicted Range:  [6.82, 62.99]
+  Actual Range:     [2.7, 111.7]
+============================================================
+
+
+============================================================
+Feature Importance:
+============================================================
+                Feature  Importance
+0        temperature_2m    0.249200
+3        wind_speed_10m    0.232718
+1      surface_pressure    0.178573
+5             month_cos    0.119998
+2  relative_humidity_2m    0.098141
+4             month_sin    0.059293
+6              hour_sin    0.038060
+7              hour_cos    0.024017
+============================================================
+
+Database connection closed.

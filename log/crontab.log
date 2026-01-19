@@ -1,0 +1,166 @@
+Traceback (most recent call last):
+  File "/home/zochowski/AirPollutionPredictor/tools/python/downloads.py", line 30, in <module>
+    main()
+  File "/home/zochowski/AirPollutionPredictor/tools/python/downloads.py", line 7, in main
+    subprocess.call(["/home/zochowski/AirPollutionPredictor/tools/data_retrieval/weather_data_retrieval.sh", str(date), str(date), "/tmp/weather.csv"])
+                                                                                                                 ^^^^
+NameError: name 'date' is not defined
+Preparing data...
+Traceback (most recent call last):
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 86, in <module>
+    main()
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 64, in main
+    X_train, X_test, y_train, y_test = prepare_data(
+                                       ^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 26, in prepare_data
+    weather = read_weather_data(weather_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 10, in read_weather_data
+    df = pd.read_csv(path, sep=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../downloading_data/warsaw_weather_2025_hourly.csv'
+Traceback (most recent call last):
+  File "/home/zochowski/AirPollutionPredictor/tools/python/downloads.py", line 30, in <module>
+    main()
+  File "/home/zochowski/AirPollutionPredictor/tools/python/downloads.py", line 7, in main
+    subprocess.call(["/home/zochowski/AirPollutionPredictor/tools/data_retrieval/weather_data_retrieval.sh", str(date), str(date), "/tmp/weather.csv"])
+                                                                                                                 ^^^^
+NameError: name 'date' is not defined
+Preparing data...
+Traceback (most recent call last):
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 86, in <module>
+    main()
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 64, in main
+    X_train, X_test, y_train, y_test = prepare_data(
+                                       ^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 26, in prepare_data
+    weather = read_weather_data(weather_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 10, in read_weather_data
+    df = pd.read_csv(path, sep=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../downloading_data/warsaw_weather_2025_hourly.csv'
+Traceback (most recent call last):
+  File "/home/zochowski/AirPollutionPredictor/tools/python/downloads.py", line 30, in <module>
+    main()
+  File "/home/zochowski/AirPollutionPredictor/tools/python/downloads.py", line 7, in main
+    subprocess.call(["/home/zochowski/AirPollutionPredictor/tools/data_retrieval/weather_data_retrieval.sh", str(date), str(date), "/tmp/weather.csv"])
+                                                                                                                 ^^^^
+NameError: name 'date' is not defined
+Preparing data...
+Traceback (most recent call last):
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 86, in <module>
+    main()
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 64, in main
+    X_train, X_test, y_train, y_test = prepare_data(
+                                       ^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 26, in prepare_data
+    weather = read_weather_data(weather_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 10, in read_weather_data
+    df = pd.read_csv(path, sep=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../downloading_data/warsaw_weather_2025_hourly.csv'
+Preparing data...
+Traceback (most recent call last):
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 86, in <module>
+    main()
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 64, in main
+    X_train, X_test, y_train, y_test = prepare_data(
+                                       ^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 26, in prepare_data
+    weather = read_weather_data(weather_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 10, in read_weather_data
+    df = pd.read_csv(path, sep=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../downloading_data/warsaw_weather_2025_hourly.csv'
+Preparing data...
+Traceback (most recent call last):
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 86, in <module>
+    main()
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 64, in main
+    X_train, X_test, y_train, y_test = prepare_data(
+                                       ^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 26, in prepare_data
+    weather = read_weather_data(weather_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zochowski/AirPollutionPredictor/baseline_predictor/smog_predictor.py", line 10, in read_weather_data
+    df = pd.read_csv(path, sep=',')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../downloading_data/warsaw_weather_2025_hourly.csv'
