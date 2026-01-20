@@ -59,5 +59,5 @@ paste -d "," <(echo "$dates_nospace") <(echo "$c6h6_values") <(echo "$co_values"
 
 chmod 666 $out_file
 
-echo echo "[$(date -Iseconds)] tools/data_retrieval/pollution_data_retrieval.sh INFO: script finished" >> $log_file
+echo "[$(date -Iseconds)] tools/data_retrieval/pollution_data_retrieval.sh INFO: script finished" >> $log_file
 exit 0
