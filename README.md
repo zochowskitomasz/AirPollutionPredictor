@@ -22,7 +22,7 @@ Then, install the virtual environment using `uv`:
 uv sync
 ```
 
-### PostgreSQL
+### 2. PostgreSQL
 
 PostgreSQL is required to store data on which predictions run. In order to set up the database, install PostgreSQL on the machine by running the following command:
 
@@ -36,9 +36,17 @@ After that, execute SQL script `tools/database_setup.sql` in order to create the
 psql -f tools/database_setup.sql
 ```
 
-## Cron
+### 3. Task automation with `cron`
 
-WIP
+Daily data downloads and predictions are triggered by `cron`. To set it up, execute following commands:
+
+```bash
+(crontab -l 2>/dev/null; echo "AIR_POLLUTION_DIR=$(pwd)
+0 14 * * * \$AIR_POLLUTION_DIR/.venv/bin/python3 \$AIR_POLLUTION_DIR/tools/python/downloads.py >> \$AIR_POLLUTION_DIR/log/download.log 2>&1
+0 15 * * * \$AIR_POLLUTION_DIR/.venv/bin/python3 \$AIR_POLLUTION_DIR/tools/predictor/predictor.py >> \$AIR_POLLUTION_DIR/log/prediction.log 2>&1") | crontab -
+```
+
+If necessary, provide different time of execution of these scripts. Be aware, however, that triggering `tools/python/downloads.py` more than once a day will lead to data duplication.
 
 ## Project structure
 
@@ -46,31 +54,38 @@ WIP
 .
 ├── archive                 # no longer used
 │   ├── data
-│   ├── notebooks
-│   │   ├── FirstLook.ipynb
-│   │   ├── world_weather_online.ipynb
+│   │   └── ...
+│   └── notebooks
+│       ├── FirstLook.ipynb
+│       └── world_weather_online.ipynb
 ├── baseline_predictor      # prediction models
 │   ├── smog_predictor.ipynb
-│   ├── smog_predictor.py
-│   ├── smog_predictor2.py
+│   └── smog_predictor.py
 ├── log                     # logs created during app runtime
 │   ├── download.log
 │   ├── prediction.log
-|   ├── prediction2.log
-│   ├── runtime.log
+│   ├── prediction2.log
+│   └── runtime.log
 ├── tools                   # scripts for various tasks
 │   ├── data_retrieval
 │   │   ├── pollution_data_retrieval.sh
-│   │   ├── weather_data_retrieval.sh
+│   │   └── weather_data_retrieval.sh
+│   ├── predictor
+│   │   ├── README.md
+│   │   └── predictor.py
 │   ├── psql
-│   │   ├── database_setup.sql
-│   ├── python
-│   │   ├── downloads.py
-│   │   ├── import_historic_data.py
+│   │   └── database_setup.sql
+│   └── python
+│       ├── plots
+│       │   └── ...
+│       ├── downloads.py
+│       ├── import_historic_data.py
+│       ├── plotter.py
+│       └── statistics.py
 ├── .gitignore
 ├── .python-version
 ├── uv.lock
 ├── README.md
-├── pyproject.toml
+└── pyproject.toml
 ```
 
