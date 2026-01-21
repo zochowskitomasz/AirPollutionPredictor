@@ -52,15 +52,15 @@ If necessary, provide different time of execution of these scripts. Be aware, ho
 
 ```
 .
-├── archive                 # no longer used
+├── archive                 # files no longer used
+│   ├── baseline_predictor
 │   ├── data
-│   │   └── ...
-│   └── notebooks
-│       ├── FirstLook.ipynb
-│       └── world_weather_online.ipynb
-├── baseline_predictor      # prediction models
-│   ├── smog_predictor.ipynb
-│   └── smog_predictor.py
+│   ├── notebooks
+│   └── raspberrypi
+├── docs                    # project documentation
+│   ├── development.md
+│   ├── model.md
+│   └── structure.md
 ├── log                     # logs created during app runtime
 │   ├── download.log
 │   ├── prediction.log
