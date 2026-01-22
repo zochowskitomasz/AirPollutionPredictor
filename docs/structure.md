@@ -1,8 +1,16 @@
 # Project structure
 
+This document describes in detail the structure of the project &ndash; hardware, infrastructure, scripts, database and job scheduling.
+
 ## Hardware and infrastructure
 
-## Design
+{hardware}
+
+The design of our project is presented in the picture below.
+
+![Project infrastructure presented in a diagram with five blocks. Smog data API and Weather data API blocks have arrows pointing to Logs and Postgres Database blocks. Postgres Database block points to Python prediction model block, which in turn points to Logs block. APIs and Python blocks are in a group captioned as Cron.](img/infrastructure.png)
+
+Details regarding each component of this diagram are described below, in next sections.
 
 ## Data retrieval
 
@@ -69,12 +77,30 @@ Table `pollution` has following columns:
 Since connecting to the database is required to write as well as read data, a special user `airflow` with password `airflow` was created (the choice of the username has historical reasons). This user is granted all privileges to the database `air_pollution`.
 
 > [!CAUTION]
-> This poses a serious security risk if used in an exposed system. Make sure to change the username and/or the password in the database and scripts in `tools/predictor` and `tools/python` directories.
+> This poses a serious security risk if used in an exposed system. Make sure to change the username and/or password in the database (in `tools/psql/database_setup.sql` script or directly) as well as in scripts located in `tools/predictor` and `tools/python` directories.
 
 ## Analysis
 
+The goal of this project was to analyze acquired data &ndash; namely, model the level of PM2.5 pollution based on weather conditions. We go through tools used for that goal below.
+
 ### Exploratory Data Analysis
 
+There are two main scripts which are used for EDA in out project. The first one, `tools/python/statistics.py`, calculates various statistics on data to get more insight into it. The second one, `tools/python/plotter.py`, draws time series of some features and saves plots to `tools/python/plots` directory. 
 
+These scripts use data from the database by connecting to it. Additionally, Python libraries are used to perform the analyses.
+
+### Model
+
+The main model we used in the project is located in the `tools/predictor` directory. The detailed description is located in the [model doc file](model.md) as well as a [README file](../tools/predictor/README.md) located in the `tools/predictor` directory. This script also connects to the database to query relevant data.
 
 ## Job scheduling
+
+To automate the implemented workflow, `cron` is being used. It performs two tasks daily: data retrieval and prediction.
+
+### Data retrieval
+
+Every day (default time specified in setup instructions in [README](../README.md) is 14:00), data retrieval is performed using the `tools/python/downloads.py` script. Any output from the execution of this script is saved to `log/download.log` to allow for troubleshooting if needed.
+
+### Prediction
+
+Like data retrieval, prediction is ran every day (the only difference is time &ndash; it's executed at 15:00 so that new data has definitely been downloaded). The script `tools/predictor/predictor.py` is executed, and the output containing prediction metrics is saved to `log/prediction.log`. 
