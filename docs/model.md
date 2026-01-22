@@ -65,7 +65,7 @@ Residual Mean (-1.25): The slightly negative mean suggests a minor systematic bi
 Residual Standard Deviation (10.18): The high standard deviation of the residuals aligns with the RMSE, confirming that the variance of the prediction errors is wide. 
 
 
-3. Value Ranges-
+4. Value Ranges
 
 Analysis of the Value Ranges reveals a significant limitation in the model’s ability to predict extreme events:
 
@@ -90,7 +90,12 @@ Feature Importance table identifies which meteorological factors had the most si
 | 7 | **hour_cos** | 0.024342 |
 
 
- Temperature (~24.8%) and Wind Speed (~23.5%) are the most critical predictors, collectively accounting for nearly 48% of the feature importance. This aligns with physical expectations (e.g., wind disperses pollutants, temperature affects homes heating).
+Temperature (~24.8%) and Wind Speed (~23.5%) are the most critical predictors, collectively accounting for nearly 48% of the feature importance. This aligns with physical expectations (e.g., wind disperses pollutants, temperature affects homes heating).
+
+This correlation is clearly visible on grapghs:
+![Temp-PM25](../tools/python/plots/chart_5_combined_pm25_temp.png)
+
+![Wind-PM25](../tools/python/plots/chart_6_combined_pm25_wind.png)
 
 The cyclical feature month_cos is the fourth most important factor (~12.1%), indicating that seasonal trends (likely winter vs. summer) are strong predictors of pollution levels.
 
