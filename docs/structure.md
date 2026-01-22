@@ -4,13 +4,13 @@ This document describes in detail the structure of the project &ndash; hardware,
 
 ## Hardware and infrastructure
 
-{hardware}
+Our project is hosted on an old gaming laptop, which we have turned into a cloud-style server, running Ubuntu 24.04.3. We've set up a VPN in order to be able to access it from outside of the home network. Thanks to that, it is able to run the predictor regularly, without user interaction. 
 
-The design of our project is presented in the picture below.
+Below is the architecture diagram of our project.
 
 ![Project infrastructure presented in a diagram with five blocks. Smog data API and Weather data API blocks have arrows pointing to Logs and Postgres Database blocks. Postgres Database block points to Python prediction model block, which in turn points to Logs block. APIs and Python blocks are in a group captioned as Cron.](img/infrastructure.png)
 
-Details regarding each component of this diagram are described below, in next sections.
+Details regarding each component are described below, in next sections.
 
 ## Data retrieval
 
